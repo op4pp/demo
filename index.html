@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SRG loomine</title>
-    <link href="https://fonts.googleapis.com/css2?family=Clash+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Clash+Grotesk:wght@400;500;600&display=swap');
+		
         body {
+		    font-family: 'Clash Grotesk', sans-serif;
 			background-image: url('blurtaust.png');
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -74,11 +76,12 @@
 			content: '';
 			position: absolute;
 			top: 50%;
-			transform: translateY(-50%);
+			transform: translateY(-50%); /* Muudetud transform, et pilt oleks vertikaalselt keskel */
 			width: 20px;
 			height: 20px;
-			border-radius: 45%;
-			background-image: linear-gradient(#F0743E, #EA9B79);
+			border-radius: 50%;
+			background-image: url('pointer.png'); /* Asenda 'sinu-pilti-asukoht.jpg' oma pildi asukohaga */
+			background-size: cover; /* Muudab pildi suuruse vastavalt konteineri suurusele */
 			cursor: pointer;
 		}
         .event:nth-child(odd) {
@@ -137,7 +140,7 @@
             text-align: left;
             font-size: 17px;
         }
-		@media (min-width: 1580px) {
+		@media (min-width: 1500px) {
 			.event {
 				text-align: justify;
 				font-size: 18px;
@@ -152,11 +155,7 @@
                 display: none;
             }
 		}
-		@media (max-width: 1579px) {
-			.event {
-				text-align: left;
-				font-size: 16px;
-			}
+		@media (max-width: 1499px) {
 			.sidebar {
                 display: none;
             }
@@ -169,6 +168,21 @@
             .desktop-text {
                 display: none;
             }
+			.event {
+				text-align: left;
+				font-size: 16px;
+				width: 100%; /* Muudetud laiust, et aastad oleksid täielikult üksteise all */
+				margin-bottom: 40px; /* Lisatud tühik aastate vahele */
+				padding: 20px;
+				box-sizing: border-box;
+				background: #fff;
+				border-radius: 10px;
+				box-shadow: 0 0 10px rgba(0,0,0,0.1);
+				text-align: justify;
+			}
+			.event::before {
+				display: none; /* Peidab punktiire, kuna need ei ole enam vajalikud */
+			}
         }
 		.modal-content {
 		  margin: auto;
@@ -228,7 +242,7 @@
 	</div>
     <div class="timeline">
 		<div class="event" style="background-image: url(element.png);" id="algus">
-		<h1 style="background-image: linear-gradient(145deg, #F0743E, #E5CBC0); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">SRG loomine</h1>
+		<h1 style="background-image: linear-gradient(145deg, #F0743E, #EA9B79); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">SRG loomine</h1>
 		<p class="desktop-text" style="color: #212121; text-shadow: 0.8px 0.8px 2px rgba(0, 0, 0, 0.5);">Ajalukku sukeldumiseks keri alla!</p>
 		<p class="mobile-text" style="color: #212121; text-shadow: 0.8px 0.8px 2px rgba(0, 0, 0, 0.5);">Ajalukku sukeldumiseks libista alla!</p>
 		<h3 style="color: #212121; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">Kooli asukoht enne ja praegu</h3>
