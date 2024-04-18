@@ -133,7 +133,7 @@ body {
 	text-align: left;
 	font-size: 17px;
 }
-@media (min-width: 1470px) {
+@media (min-width: 1470px) { /* Desktop */
 	.event {
 		text-align: justify;
 		font-size: 19px;
@@ -148,7 +148,35 @@ body {
 		display: none;
 	}
 }
-@media (max-width: 1469px) {
+@media (min-width: 601px) and (max-width: 1469px) { /* Mainly for laptop, but also for tablet */
+	.sidebar {
+		display: none;
+	}
+	.timeline {
+		position: center;
+	}
+	.special-quote {
+		text-align: left;
+	}
+	.mobile-text {
+		display: none;
+	}
+	.event {
+		text-align: justify;
+		font-size: 19px;
+		width: 100%;
+		margin-bottom: 40px;
+		padding: 20px;
+		box-sizing: border-box;
+		background: #fff;
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	}
+	.event::before {
+		display: none;
+	}
+}
+@media (max-width: 600px) { /* Phone */
 	.sidebar {
 		display: none;
 	}
